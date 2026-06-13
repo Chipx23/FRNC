@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FRNC Creative — Graphic Design & Digital Products</title>
+  <meta name="description" content="FRNC Creative — Graphic designer and digital product creator based in the Philippines. Canva templates, vector files, Lightroom presets, and sticker packs for print businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #080808;
+      --surface:   #0f0f0f;
+      --surface-2: #161616;
+      --border:    #1e1e1e;
+      --border-2:  #2a2a2a;
+      --lime:      #B9FF4B;
+      --lime-10:   rgba(185,255,75,0.10);
+      --lime-20:   rgba(185,255,75,0.18);
+      --white:     #EDEDED;
+      --gray:      #888;
+      --muted:     #484848;
+      --font-d:    'Syne', sans-serif;
+      --font-b:    'Space Grotesk', sans-serif;
+      --font-m:    'Space Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 2px; }
+
+    /* ══════════════════════════════
+       NAV
+    ══════════════════════════════ */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 200;
+      padding: 1.25rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.4s, border-color 0.4s;
+      border-bottom: 1px solid transparent;
+    }
+    #nav.scrolled {
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom-color: var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-d);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 1px;
+    }
+    .nav-logo .n-mark { color: var(--lime); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--font-m);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--lime); }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7rem 5vw 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background grid */
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .bg-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 75% 80% at 40% 55%, transparent 20%, var(--bg) 80%);
+      pointer-events: none;
+    }
+
+    /* Hero content */
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1600px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-m);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 1.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--lime);
+    }
+
+    /* Giant brand name — the signature element */
+    .hero-brand {
+      font-family: var(--font-d);
+      font-weight: 800;
+      font-size: clamp(5.5rem, 15vw, 14rem);
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      -webkit-text-stroke: 1.5px var(--white);
+      color: transparent;
+      user-select: none;
+      display: block;
+    }
+    /* The 'N' is filled — acts as brand mark, founder initial */
+    .hero-brand .n-fill {
+      -webkit-text-stroke: 0px;
+      color: var(--lime);
+      position: relative;
+    }
+    .hero-creative {
+      font-family: var(--font-d);
+      font-weight: 400;
+      font-size: clamp(0.7rem, 1.8vw, 1rem);
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.35rem;
+      margin-bottom: 2.25rem;
+      padding-left: 0.3rem;
+    }
+
+    .hero-craft {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 2.75rem;
+      flex-wrap: wrap;
+    }
+    .craft-label {
+      font-family: var(--font-b);
+      font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+      font-weight: 300;
+      color: var(--gray);
+      white-space: nowrap;
+    }
+    .typewriter-wrap {
+      font-family: var(--font-d);
+      font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+      font-weight: 700;
+      color: var(--lime);
+      min-width: 16ch;
+    }
+    .tw-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--lime);
+      margin-left: 1px;
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .hero-cta {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-d);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.8rem 1.85rem;
+      border-radius: 2px;
+      transition: all 0.22s;
+    }
+    .btn-lime {
+      background: var(--lime);
+      color: #080808;
+    }
+    .btn-lime:hover { background: #caff6e; transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border-2);
+    }
+    .btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
+
+    /* Ticker */
+    .ticker-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+      padding: 0.85rem 0;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 2.5rem;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-track span {
+      font-family: var(--font-m);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .ticker-track .t-dot { color: var(--lime); opacity: 0.6; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ══════════════════════════════
+       SHARED SECTION STYLES
+    ══════════════════════════════ */
+    section {
+      padding: 6rem 5vw;
+      border-top: 1px solid var(--border);
+    }
+    .sec-label {
+      font-family: var(--font-m);
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      max-width: 3rem;
+      height: 1px;
+      background: var(--lime);
+      opacity: 0.5;
+    }
+    .sec-title {
+      font-family: var(--font-d);
+      font-weight: 800;
+      font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    /* ══════════════════════════════
+       ABOUT
+    ══════════════════════════════ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+    .about-bio p {
+      font-size: 1.02rem;
+      font-weight: 300;
+      color: var(--gray);
+      line-height: 1.85;
+    }
+    .about-bio p + p { margin-top: 1.1rem; }
+    .about-bio strong { color: var(--white); font-weight: 500; }
+    .about-bio .bio-lime { color: var(--lime); }
+
+    .skills-label {
+      font-family: var(--font-m);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .chip {
+      font-family: var(--font-m);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border-2);
+      padding: 0.48rem 0.85rem;
+      border-radius: 1px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      cursor: default;
+    }
+    .chip:hover { border-color: var(--lime); color: var(--lime); background: var(--lime-10); }
+    .about-stat-row {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: var(--font-d);
+      font-weight: 800;
+      font-size: 2rem;
+      color: var(--lime);
+      line-height: 1;
+    }
+    .stat-desc {
+      font-family: var(--font-m);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ══════════════════════════════
+       WORK / PORTFOLIO
+    ══════════════════════════════ */
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .filter-row {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .filt-btn {
+      font-family: var(--font-m);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border-2);
+      padding: 0.45rem 0.9rem;
+      border-radius: 1px;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .filt-btn:hover { color: var(--white); border-color: #383838; }
+    .filt-btn.active {
+      background: var(--lime);
+      color: #080808;
+      border-color: var(--lime);
+      font-weight: 700;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .work-card {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .work-card:hover {
+      border-color: var(--lime);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(185,255,75,0.06);
+    }
+    .work-card.is-hidden { display: none; }
+
+    /* ── CSS-art card previews ── */
+    .card-preview {
+      height: 210px;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+
+    /* 1. Canva templates — mini page layout */
+    .p-canva {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: repeat(4,1fr);
+      gap: 5px;
+      padding: 14px;
+      height: 100%;
+    }
+    .p-canva div { background: #1c1c1c; border-radius: 1px; }
+    .p-canva .c-lime { background: var(--lime); opacity: 0.9; }
+    .p-canva .c-mid  { background: #282828; }
+    .p-canva .span2  { grid-column: span 2; }
+    .p-canva .span3  { grid-column: span 3; }
+    .p-canva .span4  { grid-column: span 4; }
+
+    /* 2. GSX-R Wrap — geometric SVG */
+    .p-vector {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+    .p-vector svg { width: 100%; height: 100%; }
+
+    /* 3. Lightroom presets — colour strips */
+    .p-presets {
+      height: 100%;
+      display: flex;
+    }
+    .ps-strip { flex: 1; }
+
+    /* 4. Decal/sticker pack — dot arrangement */
+    .p-stickers {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: repeat(3,1fr);
+      gap: 8px;
+      padding: 18px;
+      align-items: center;
+      justify-items: center;
+    }
+    .p-stickers .dot {
+      border-radius: 50%;
+      border: 1.5px solid #333;
+    }
+
+    /* 5. Monogram logo — outlined letterform */
+    .p-logo {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-ltr {
+      font-family: var(--font-d);
+      font-weight: 800;
+      font-size: 5.5rem;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      -webkit-text-stroke: 2px var(--lime);
+      color: transparent;
+      user-select: none;
+    }
+
+    /* 6. Banner / event layout */
+    .p-banner {
+      height: 100%;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 7px;
+      background: linear-gradient(135deg, #111 0%, #0c0c0c 100%);
+    }
+    .ban-bar { border-radius: 1px; }
+
+    /* Card text */
+    .card-body { padding: 1.2rem 1.35rem 1.35rem; }
+    .card-cat {
+      font-family: var(--font-m);
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--lime);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .card-title {
+      font-family: var(--font-d);
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+    .card-desc {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .card-foot {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 0.85rem;
+    }
+    .card-arrow {
+      font-family: var(--font-m);
+      font-size: 0.75rem;
+      color: var(--lime);
+      opacity: 0.5;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .work-card:hover .card-arrow { opacity: 1; transform: translate(3px,-2px); }
+
+    /* ══════════════════════════════
+       CONTACT
+    ══════════════════════════════ */
+    #contact { text-align: center; }
+    .contact-head {
+      font-family: var(--font-d);
+      font-weight: 800;
+      font-size: clamp(2.8rem, 9vw, 7.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      -webkit-text-stroke: 1.5px var(--white);
+      color: transparent;
+      margin: 1.5rem 0;
+    }
+    .contact-head .ch-lime {
+      -webkit-text-stroke: 0;
+      color: var(--lime);
+    }
+    .contact-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--gray);
+      margin-bottom: 3rem;
+      max-width: 40ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .platform-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+    .plat-link {
+      flex: 1 1 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.5rem 1.25rem;
+      background: var(--surface);
+      color: var(--white);
+      text-decoration: none;
+      font-family: var(--font-d);
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .plat-link:hover { background: var(--lime-10); color: var(--lime); }
+    .plat-icon {
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+    .plat-name { font-size: 0.75rem; }
+    .plat-arrow {
+      font-size: 0.65rem;
+      font-family: var(--font-m);
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .plat-link:hover .plat-arrow { color: var(--lime); }
+
+    .contact-meta {
+      font-family: var(--font-m);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .contact-meta a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-meta a:hover { color: var(--lime); }
+    .meta-dot { opacity: 0.25; }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.85rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .foot-brand {
+      font-family: var(--font-d);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .foot-brand .fn { color: var(--lime); }
+    .foot-copy {
+      font-family: var(--font-m);
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    /* ══════════════════════════════
+       REVEAL ANIMATIONS
+    ══════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 980px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .work-grid  { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 620px) {
+      #nav { padding: 1rem 5vw; }
+      .nav-links { gap: 1.5rem; }
+      .hero-brand { -webkit-text-stroke: 1px var(--white); font-size: clamp(5rem,18vw,7rem); }
+      .work-grid  { grid-template-columns: 1fr; }
+      .platform-group { flex-direction: column; }
+      footer { flex-direction: column; gap: 0.6rem; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track { animation-play-state: paused; }
+      .tw-cursor    { animation: none; }
+      .reveal       { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">FR<span class="n-mark">N</span>C</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-vignette" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Graphic Designer &middot; Philippines</div>
+
+      <span class="hero-brand" aria-label="FRNC">FR<span class="n-fill">N</span>C</span>
+      <div class="hero-creative">Creative</div>
+
+      <div class="hero-craft">
+        <span class="craft-label">Crafting</span>
+        <div class="typewriter-wrap">
+          <span id="tw-text"></span><span class="tw-cursor" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#work"    class="btn btn-lime">View My Work &rarr;</a>
+        <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+
+    <!-- Scrolling ticker -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker-track" id="ticker">
+        <span>Canva Templates</span><span class="t-dot">✦</span>
+        <span>Vector / CDR Files</span><span class="t-dot">✦</span>
+        <span>Lightroom Presets</span><span class="t-dot">✦</span>
+        <span>Sticker Packs</span><span class="t-dot">✦</span>
+        <span>Logo Design</span><span class="t-dot">✦</span>
+        <span>Print-Ready Assets</span><span class="t-dot">✦</span>
+        <span>Digital Products</span><span class="t-dot">✦</span>
+        <span>Canva Templates</span><span class="t-dot">✦</span>
+        <span>Vector / CDR Files</span><span class="t-dot">✦</span>
+        <span>Lightroom Presets</span><span class="t-dot">✦</span>
+        <span>Sticker Packs</span><span class="t-dot">✦</span>
+        <span>Logo Design</span><span class="t-dot">✦</span>
+        <span>Print-Ready Assets</span><span class="t-dot">✦</span>
+        <span>Digital Products</span><span class="t-dot">✦</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about">
+    <div class="sec-label">About</div>
+    <div class="about-grid">
+      <div class="reveal">
+        <h2 class="sec-title" style="margin-bottom:1.75rem;">
+          Design that earns<br>its place on paper.
+        </h2>
+        <div class="about-bio">
+          <p>I'm <strong>Junmark</strong> — the person behind <strong>FRNC Creative</strong>. I build print-ready design assets and digital product bundles tailored for <strong>printing business owners</strong> and freelance clients across the Philippines and beyond.</p>
+          <p>My catalog spans <strong>Canva template packs</strong>, <strong>CorelDRAW / CDR vector files</strong>, <strong>Lightroom presets</strong>, sticker and decal packs, and custom identity work — all distributed through <span class="bio-lime">Etsy</span>, <span class="bio-lime">Gumroad</span>, and <span class="bio-lime">Creative Market</span>.</p>
+          <p>If it needs to look good at any size, on any substrate, I'm the person who builds that.</p>
+        </div>
+        <div class="about-stat-row">
+          <div class="stat-item">
+            <div class="stat-num">50+</div>
+            <div class="stat-desc">Template Products</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">3</div>
+            <div class="stat-desc">Platforms</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">PH</div>
+            <div class="stat-desc">Based &amp; Shipping</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d1">
+        <div class="skills-label">Skills &amp; Tools</div>
+        <div class="chips">
+          <span class="chip">Canva Templates</span>
+          <span class="chip">CorelDRAW / CDR</span>
+          <span class="chip">Adobe Lightroom</span>
+          <span class="chip">Vector Design</span>
+          <span class="chip">Print Production</span>
+          <span class="chip">Sticker / Decal</span>
+          <span class="chip">Logo Design</span>
+          <span class="chip">Tarp Banners</span>
+          <span class="chip">Digital Products</span>
+          <span class="chip">Etsy Seller</span>
+          <span class="chip">Gumroad</span>
+          <span class="chip">Creative Market</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ WORK ═══ -->
+  <section id="work">
+    <div class="work-header">
+      <div>
+        <div class="sec-label">Selected Work</div>
+        <h2 class="sec-title">Things I've built.</h2>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filter projects">
+        <button class="filt-btn active" data-cat="all">All</button>
+        <button class="filt-btn" data-cat="templates">Templates</button>
+        <button class="filt-btn" data-cat="vector">Vector</button>
+        <button class="filt-btn" data-cat="presets">Presets</button>
+        <button class="filt-btn" data-cat="stickers">Stickers</button>
+        <button class="filt-btn" data-cat="logos">Logos</button>
+      </div>
+    </div>
+
+    <div class="work-grid">
+
+      <!-- ── Card 1: Canva Template Bundle ── -->
+      <a href="#" class="work-card reveal" data-category="templates">
+        <div class="card-preview">
+          <div class="p-canva">
+            <div class="c-lime span2"></div>
+            <div></div>
+            <div></div>
+            <div class="c-mid span3"></div>
+            <div></div>
+            <div class="span4" style="background:#1a1a1a;"></div>
+            <div></div>
+            <div class="c-lime"></div>
+            <div class="c-mid span2"></div>
+            <div class="span4" style="background:#181818;"></div>
+            <div class="c-mid span2"></div>
+            <div class="c-lime"></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Canva Templates</span>
+          <div class="card-title">Print Shop Bundle</div>
+          <div class="card-desc">50+ editable Canva templates for tarpaulins, ID layouts, and business cards — built for Filipino printing businesses.</div>
+          <div class="card-foot"><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <!-- ── Card 2: GSX-R Wrap CDR ── -->
+      <a href="#" class="work-card reveal reveal-d1" data-category="vector">
+        <div class="card-preview">
+          <div class="p-vector">
+            <svg viewBox="0 0 240 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="grd" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#B9FF4B;stop-opacity:0.8"/>
+                  <stop offset="100%" style="stop-color:#B9FF4B;stop-opacity:0"/>
+                </linearGradient>
+              </defs>
+              <!-- Fairing silhouette shape -->
+              <path d="M30,150 Q60,50 120,20 Q180,50 210,150 L180,160 Q120,90 60,160 Z"
+                    fill="none" stroke="#2a2a2a" stroke-width="1"/>
+              <path d="M50,145 Q75,65 120,38 Q165,65 190,145"
+                    fill="none" stroke="url(#grd)" stroke-width="1.5"/>
+              <!-- Speed lines -->
+              <line x1="20" y1="95" x2="220" y2="95" stroke="#1e1e1e" stroke-width="0.5"/>
+              <line x1="40" y1="120" x2="200" y2="120" stroke="#1e1e1e" stroke-width="0.5"/>
+              <line x1="60" y1="70"  x2="180" y2="70"  stroke="#1e1e1e" stroke-width="0.5"/>
+              <!-- Panel marks -->
+              <path d="M80,48 L72,130" stroke="#B9FF4B" stroke-width="0.75" opacity="0.5"/>
+              <path d="M160,48 L168,130" stroke="#B9FF4B" stroke-width="0.75" opacity="0.5"/>
+              <!-- Anchor point circles -->
+              <circle cx="120" cy="20"  r="3" fill="#B9FF4B" opacity="0.9"/>
+              <circle cx="30"  cy="150" r="2.5" fill="none" stroke="#B9FF4B" stroke-width="1" opacity="0.5"/>
+              <circle cx="210" cy="150" r="2.5" fill="none" stroke="#B9FF4B" stroke-width="1" opacity="0.5"/>
+              <circle cx="120" cy="95"  r="5" fill="none" stroke="#B9FF4B" stroke-width="1" opacity="0.4"/>
+              <!-- Corner reg marks -->
+              <line x1="10" y1="10" x2="22" y2="10" stroke="#2a2a2a" stroke-width="0.75"/>
+              <line x1="10" y1="10" x2="10" y2="22" stroke="#2a2a2a" stroke-width="0.75"/>
+              <line x1="230" y1="10" x2="218" y2="10" stroke="#2a2a2a" stroke-width="0.75"/>
+              <line x1="230" y1="10" x2="230" y2="22" stroke="#2a2a2a" stroke-width="0.75"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Vector / CDR</span>
+          <div class="card-title">GSX-R150 Wrap Template</div>
+          <div class="card-desc">Full-body fairing wrap vector for the Suzuki GSX-R150. Print-ready, panel-accurate CorelDRAW format.</div>
+          <div class="card-foot"><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <!-- ── Card 3: Lightroom Presets ── -->
+      <a href="#" class="work-card reveal reveal-d2" data-category="presets">
+        <div class="card-preview">
+          <div class="p-presets">
+            <div class="ps-strip" style="background:#1a0f07;"></div>
+            <div class="ps-strip" style="background:#0e1a0a;"></div>
+            <div class="ps-strip" style="background:#0a0e1a;"></div>
+            <div class="ps-strip" style="background:#1a0a0e;"></div>
+            <div class="ps-strip" style="background:linear-gradient(to bottom,#111808,#0d0c16);"></div>
+            <div class="ps-strip" style="background:#0f1a10;"></div>
+            <div class="ps-strip" style="background:#B9FF4B;"></div>
+            <div class="ps-strip" style="background:#1a1408;"></div>
+            <div class="ps-strip" style="background:linear-gradient(to bottom,#180a10,#0a1518);"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Lightroom Presets</span>
+          <div class="card-title">Moody Film Preset Pack</div>
+          <div class="card-desc">12-preset collection for lifestyle and product photography. One-click edits, desktop &amp; mobile compatible.</div>
+          <div class="card-foot"><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <!-- ── Card 4: Sticker Pack ── -->
+      <a href="#" class="work-card reveal" data-category="stickers">
+        <div class="card-preview">
+          <div class="p-stickers">
+            <div class="dot" style="width:42px;height:42px;background:var(--lime);border-color:var(--lime);opacity:0.9;"></div>
+            <div class="dot" style="width:30px;height:30px;background:#1e1e1e;"></div>
+            <div class="dot" style="width:52px;height:52px;background:#161616;border-color:#2a2a2a;"></div>
+            <div class="dot" style="width:26px;height:26px;background:var(--lime);opacity:0.4;border:none;"></div>
+            <div class="dot" style="width:36px;height:36px;background:#181818;border-color:#222;"></div>
+            <div class="dot" style="width:46px;height:46px;background:#1a1a1a;border-color:#333;"></div>
+            <div class="dot" style="width:28px;height:28px;background:#232323;"></div>
+            <div class="dot" style="width:50px;height:50px;background:var(--lime);opacity:0.7;border-color:var(--lime);"></div>
+            <div class="dot" style="width:32px;height:32px;background:#1c1c1c;border-color:#2c2c2c;"></div>
+            <div class="dot" style="width:24px;height:24px;background:#282828;"></div>
+            <div class="dot" style="width:40px;height:40px;background:#141414;border-color:#252525;"></div>
+            <div class="dot" style="width:30px;height:30px;background:var(--lime);opacity:0.5;border:none;"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Stickers / Decals</span>
+          <div class="card-title">Moto Decal Pack Vol. 1</div>
+          <div class="card-desc">Die-cut decal designs for motorcycles. Honda Click, Yamaha, and Suzuki variants — vector and PNG formats.</div>
+          <div class="card-foot"><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <!-- ── Card 5: Monogram Logo ── -->
+      <a href="#" class="work-card reveal reveal-d1" data-category="logos">
+        <div class="card-preview">
+          <div class="p-logo">
+            <div class="logo-ltr" aria-label="FRNC monogram">FRNC</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Logo Design</span>
+          <div class="card-title">Geometric Monogram System</div>
+          <div class="card-desc">Multi-direction identity mark development — luxury rose-gold, bold black vector, and editorial style directions.</div>
+          <div class="card-foot"><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <!-- ── Card 6: Event Banner ── -->
+      <a href="#" class="work-card reveal reveal-d2" data-category="templates">
+        <div class="card-preview">
+          <div class="p-banner">
+            <div class="ban-bar" style="height:4px;background:var(--lime);width:85%;"></div>
+            <div class="ban-bar" style="height:28px;background:#1e1e1e;width:75%;"></div>
+            <div class="ban-bar" style="height:11px;background:#181818;width:92%;"></div>
+            <div class="ban-bar" style="height:11px;background:#141414;width:65%;"></div>
+            <div class="ban-bar" style="height:2px;background:#222;width:85%;margin:2px 0;"></div>
+            <div style="display:flex;gap:7px;width:72%;">
+              <div class="ban-bar" style="height:30px;background:var(--lime);flex:1;opacity:0.88;"></div>
+              <div class="ban-bar" style="height:30px;background:#1c1c1c;flex:1;"></div>
+            </div>
+            <div class="ban-bar" style="height:4px;background:#1a1a1a;width:85%;"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Banner Design</span>
+          <div class="card-title">Event Roll-Up &amp; Tarps</div>
+          <div class="card-desc">Print-ready roll-up and tarpaulin banner designs for government, school, and corporate events. Brigada-ready.</div>
+          <div class="card-foot"><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+    </div><!-- /work-grid -->
+  </section>
+
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact">
+    <div class="sec-label">Contact</div>
+    <h2 class="contact-head reveal">
+      Let's<br><span class="ch-lime">Work.</span>
+    </h2>
+    <p class="contact-sub reveal reveal-d1">
+      Find my digital products on these platforms — or reach out directly for custom work.
+    </p>
+
+    <div class="platform-group reveal reveal-d2" role="list">
+      <a href="https://etsy.com" target="_blank" rel="noopener noreferrer" class="plat-link" role="listitem">
+        <span class="plat-icon">🛍</span>
+        <span class="plat-name">Etsy Store</span>
+        <span class="plat-arrow">↗</span>
+      </a>
+      <a href="https://gumroad.com" target="_blank" rel="noopener noreferrer" class="plat-link" role="listitem">
+        <span class="plat-icon">📦</span>
+        <span class="plat-name">Gumroad</span>
+        <span class="plat-arrow">↗</span>
+      </a>
+      <a href="https://creativemarket.com" target="_blank" rel="noopener noreferrer" class="plat-link" role="listitem">
+        <span class="plat-icon">🎨</span>
+        <span class="plat-name">Creative Market</span>
+        <span class="plat-arrow">↗</span>
+      </a>
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="plat-link" role="listitem">
+        <span class="plat-icon">📣</span>
+        <span class="plat-name">Facebook Page</span>
+        <span class="plat-arrow">↗</span>
+      </a>
+    </div>
+
+    <div class="contact-meta reveal reveal-d3">
+      <span>📍 Philippines</span>
+      <span class="meta-dot">·</span>
+      <a href="mailto:hello@frnccreative.com">hello@frnccreative.com</a>
+      <span class="meta-dot">·</span>
+      <span>Open for custom work</span>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="foot-brand">FR<span class="fn">N</span>C Creative</div>
+    <div class="foot-copy">&copy; 2025 FRNC Creative &mdash; Junmark &mdash; All rights reserved</div>
+  </footer>
+
+
+  <script>
+    // ── Nav scroll behaviour ──────────────────
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ── Typewriter ───────────────────────────
+    const words = [
+      'Canva Templates.',
+      'Vector Files.',
+      'Lightroom Presets.',
+      'Print Designs.',
+      'Sticker Packs.',
+      'Brand Identities.',
+    ];
+    let wIdx = 0, cIdx = 0, del = false;
+    const twEl = document.getElementById('tw-text');
+
+    function type() {
+      const w = words[wIdx];
+      if (!del) {
+        twEl.textContent = w.slice(0, ++cIdx);
+        if (cIdx === w.length) { del = true; setTimeout(type, 1800); return; }
+        setTimeout(type, 72);
+      } else {
+        twEl.textContent = w.slice(0, --cIdx);
+        if (cIdx === 0) { del = false; wIdx = (wIdx + 1) % words.length; }
+        setTimeout(type, 38);
+      }
+    }
+    type();
+
+    // ── Intersection Observer (scroll reveal) ─
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // ── Portfolio filter ──────────────────────
+    const filtBtns = document.querySelectorAll('.filt-btn');
+    const cards    = document.querySelectorAll('.work-card');
+
+    filtBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filtBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        cards.forEach(card => {
+          card.classList.toggle(
+            'is-hidden',
+            cat !== 'all' && card.dataset.category !== cat
+          );
+        });
+      });
+    });
+  </script>
+</body>
+</html>
